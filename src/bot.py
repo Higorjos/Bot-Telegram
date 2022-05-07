@@ -42,5 +42,5 @@ class TelegramBot:
         return json.loads(resultado.content)
 
 
-bot = TelegramBot()
-bot.Iniciar()
+#bot = TelegramBot()
+#bot.Iniciar()
