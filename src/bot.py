@@ -15,7 +15,7 @@ class TelegramBot:
         update_id = None
         while True:
             atualizacao = self.obter_novas_mensagens(update_id)
-            dados = atualizacao["result"]
+            dados = atualizacao['result']
             if dados:
                 for dado in dados:
                     update_id = dado['update_id']
