@@ -14,10 +14,10 @@ class TelegramBot:
         update_id = None
         while True:
             atualizacao = self.obter_novas_mensagens(update_id)
-            dados = atualizacao['result']
+            dados = atualizacao["result"]
             if dados:
                 for dado in dados:
-                    update_id = dado['update_id']
+                    update_id = dado["update_id"]
                     mensagem = str(dado["message"]["text"])
                     chat_id = dado["message"]["from"]["id"]
                     eh_primeira_mensagem = int(
@@ -32,7 +32,7 @@ class TelegramBot:
     def responder(self, resposta, chat_id):
         link_requisicao = f'{self.url_base}sendMessage?chat_id={chat_id}&text={resposta}'
         requests.get(link_requisicao)
-
+    
     def obter_novas_mensagens(self, update_id):
         link_requisicao = f'{self.url_base}getUpdates?timeout=1000'
         if update_id:
